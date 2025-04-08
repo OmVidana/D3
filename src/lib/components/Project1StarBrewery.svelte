@@ -89,45 +89,11 @@
 	})
 </script>
 
-<div class="container">
-	<div class="navbar">
-		<a href="." class="navbar-brand">
-			<img src="logo.png" alt="star-lion" id="logo" />
+<div class="mx-auto flex w-full max-w-[500px] flex-col">
+	<nav class="flex h-[60px] w-full items-center bg-[#845a0b] px-4">
+		<a href="." class="flex h-[50px] items-center">
+			<img src="logo.png" alt="star-lion" class="h-full" />
 		</a>
-	</div>
-	<div class="row">
-		<div bind:this={chartArea} id="chart-area"></div>
-	</div>
+	</nav>
+	<div class="w-full" bind:this={chartArea}></div>
 </div>
-
-<style>
-	.container {
-		width: 500px;
-		margin: 0 auto;
-	}
-
-	#chart-area {
-		margin-left: auto;
-		margin-right: auto;
-		display: block;
-	}
-
-	#logo {
-		height: 50px;
-		opacity: 0.5;
-	}
-
-	.navbar {
-		background-color: #845a0b;
-		height: 60px;
-		width: 500px;
-		display: flex;
-		align-items: center;
-	}
-
-	.navbar-brand {
-		height: 60px;
-		display: flex;
-		align-items: center;
-	}
-</style>

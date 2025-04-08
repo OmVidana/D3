@@ -74,8 +74,6 @@
 	})
 </script>
 
-<div class="container">
-	<div class="row">
-		<div bind:this={chartArea} id="chart-area"></div>
-	</div>
+<div class="flex w-full justify-center">
+	<div class="w-full max-w-[500px]" bind:this={chartArea}></div>
 </div>
