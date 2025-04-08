@@ -25,7 +25,7 @@
 
 		d3.json('data/ages.json').then((data: any | null) => {
 			type JsonElement = { name: string; age: number }
-			const JsonData = data as Array<JsonElement> | null
+			let JsonData = data as Array<JsonElement> | null
 			JsonData?.forEach((element: JsonElement, index: number) => {
 				element.age = +element.age
 
