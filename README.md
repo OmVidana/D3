@@ -1,38 +1,93 @@
-# sv
+# 📊 D3.js with Svelte 5
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+This repository contains a collection of exercises and projects using D3.js with Svelte 5, showcasing data visualization implementations using TypeScript.
 
-## Creating a project
+## 🚀 What you'll find here
 
-If you're seeing this, you've probably already done this step. Congrats!
+Basic examples to learn D3.js fundamentals
+Visualizations like:
+Bar charts
+Data binding examples
+Dynamic transitions and updates
+Interactive graphs
+Manipulation of scales, axes, data, and SVG elements
 
-```bash
-# create a new project in the current directory
-npx sv create
+## 🛠️ Technologies
 
-# create a new project in my-app
-npx sv create my-app
+Svelte 5
+TypeScript
+D3.js (version 7)
+SvelteKit (for routing and project structure)
+
+## 📦 Installation
+
+    ```bash
+    # create a new project in the current directory
+    npx sv create
+    # create a new project in my-app
+    npx sv create my-app
+    # Navigate to project directory (if you created my-app)
+    cd my-app
+    # Install dependencies
+    npm install
+    # Install D3.js and its types
+    npm install d3
+    npm install --save-dev @types/d3
+    ```
+
+## 🏃‍♂️ Running the project
+
+    ```bash
+    # Start development server
+    npm run dev
+    # or start with network access
+    npm run dev -- --host
+    # Build for production
+    npm run build
+    ```
+
+## 📁 Project Structure
+```
+src/
+├── lib/
+│   ├── components/    # Svelte components with D3 visualizations
+│   └── index.ts      # Component exports
+├── routes/           # SvelteKit pages
+└── app.html         # Main HTML template
 ```
 
-## Developing
+## 💻 Component Structure
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Each visualization is contained in a single `.svelte` file that includes:
+- TypeScript for logic and D3 manipulation
+- HTML for structure
+- CSS for styling
 
-```bash
-npm run dev
+Example:
+```svelte
+<script lang="ts">
+  import * as d3 from 'd3';
+  // TypeScript code here
+</script>
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+<!-- HTML structure -->
+<div class="chart-container">
+  <!-- D3 will inject SVG here -->
+</div>
+
+<style>
+  /* CSS styles here */
+</style>
 ```
 
-## Building
+## 📝 Note
 
-To create a production version of your app:
+This project uses Svelte 5's new features including:
 
-```bash
-npm run build
-```
+- Use of `$effect` for creating the main `svg`
+- TypeScript for type safety
+- SvelteKit for routing and project structure
 
-You can preview the production build with `npm run preview`.
+---
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Made with ❤️ using Svelte 5 and D3.js
