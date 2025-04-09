@@ -43,5 +43,5 @@
 </script>
 
 <div class="flex w-full justify-center">
-	<div class="w-full max-w-[500px]" bind:this={chartArea}></div>
+	<div class="w-full max-w-[400px]" bind:this={chartArea}></div>
 </div>
