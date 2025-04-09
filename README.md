@@ -80,11 +80,14 @@ Example:
 </style>
 ```
 
+Instead of having a .css file, .html and .js /.ts per example it uses one .svelte component.
+
 ## 📝 Note
 
 This project uses Svelte 5's new features including:
 
 - Use of `$effect` for creating the main `svg`
+- Use of `$state` for storing reactive values
 - TypeScript for type safety
 - SvelteKit for routing and project structure
 
