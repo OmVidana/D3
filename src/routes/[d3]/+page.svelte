@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { d3Pages } from '$lib'
 	import type { PageProps } from './$types'
 
 	let { data }: PageProps = $props()
