@@ -89,7 +89,7 @@
 <div class="mx-auto flex w-full max-w-[500px] flex-col">
 	<nav class="flex h-[60px] w-full items-center bg-[#845a0b] px-4">
 		<a href="." class="flex h-[50px] items-center">
-			<img src="logo.png" alt="star-lion" class="h-full" />
+			<img src="{base}/logo.png" alt="star-lion" class="h-full" />
 		</a>
 	</nav>
 	<div class="w-full" bind:this={chartArea}></div>
