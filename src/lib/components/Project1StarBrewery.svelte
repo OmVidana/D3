@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths'
 	import * as d3 from 'd3'
 	let chartArea: HTMLDivElement
 
@@ -10,7 +11,7 @@
 			.attr('height', 500)
 			.style('background', '#181A1B')
 
-		d3.json('data/revenues.json').then((data: any | null) => {
+		d3.json(`${base}/data/revenues.json`).then((data: any | null) => {
 			type JsonElement = { month: string; revenue: number; profit: number }
 			let JsonData = data as Array<JsonElement> | null
 			JsonData?.forEach((d) => {
@@ -18,7 +19,7 @@
 				d.profit = +d.profit
 			})
 
-			let margin = { top: 20, right: 20, bottom: 80, left: 60 } // Increased left margin for y-axis labels
+			let margin = { top: 20, right: 20, bottom: 80, left: 60 }
 			let width = 500 - margin.left - margin.right
 			let height = 500 - margin.top - margin.bottom
 			const maxRevenue = d3.max(JsonData || [], (d) => d.revenue) || 0

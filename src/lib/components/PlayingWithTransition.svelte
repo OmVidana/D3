@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths'
 	import * as d3 from 'd3'
 	let chartArea: HTMLDivElement
 	let flag = $state(true)
@@ -51,7 +52,7 @@
 			.attr('fill', 'white')
 			.text('Revenue')
 
-		d3.json<RevenueData[]>('data/revenues.json').then((data) => {
+		d3.json<RevenueData[]>(`${base}/data/revenues.json`).then((data) => {
 			if (!data) return
 
 			data.forEach((d) => {

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths'
 	import * as d3 from 'd3'
 	let chartArea: HTMLDivElement
 
@@ -11,19 +12,19 @@
 			.style('border', '1px solid #f0f0f0')
 			.style('background', '#f9f9f9')
 
-		d3.csv('ages.csv').then((data: d3.DSVRowArray<string>) => {
+		d3.csv(`${base}/data/ages.csv`).then((data: d3.DSVRowArray<string>) => {
 			console.log(data)
 		})
 
-		d3.tsv('ages.tsv').then((data: d3.DSVRowArray<string>) => {
+		d3.tsv(`${base}/data/ages.tsv`).then((data: d3.DSVRowArray<string>) => {
 			console.log(data)
 		})
 
-		d3.json('ages.json').then((data: any | null) => {
+		d3.json(`${base}/data/ages.json`).then((data: any | null) => {
 			console.log(data)
 		})
 
-		d3.json('ages.json').then((data: any | null) => {
+		d3.json(`${base}/data/ages.json`).then((data: any | null) => {
 			type JsonElement = { name: string; age: number }
 			let JsonData = data as Array<JsonElement> | null
 			JsonData?.forEach((element: JsonElement, index: number) => {
