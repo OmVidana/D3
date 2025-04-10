@@ -2,6 +2,8 @@
 
 This repository contains a collection of exercises and projects using D3.js with Svelte 5, showcasing data visualization implementations using TypeScript.
 
+View in Live the repository here: omvidana.github.io/D3/
+
 ## 🚀 What you'll find here
 
 Basic examples to learn D3.js fundamentals
