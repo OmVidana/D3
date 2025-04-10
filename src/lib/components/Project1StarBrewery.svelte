@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths'
 	import * as d3 from 'd3'
 	let chartArea: HTMLDivElement
 
@@ -10,7 +11,7 @@
 			.attr('height', 500)
 			.style('background', '#181A1B')
 
-		d3.json('data/revenues.json').then((data: any | null) => {
+		d3.json(`${base}/data/revenues.json`).then((data: any | null) => {
 			type JsonElement = { month: string; revenue: number; profit: number }
 			let JsonData = data as Array<JsonElement> | null
 			JsonData?.forEach((d) => {
@@ -65,7 +66,7 @@
 				.attr('y', (d) => y(d.revenue))
 				.attr('width', x.bandwidth())
 				.attr('height', (d) => height - y(d.revenue))
-				.attr('fill', '#CCCC00') // Fixed yellow color
+				.attr('fill', '#CCCC00')
 
 			let xAxis = d3.axisBottom(x)
 			let yAxis = d3
@@ -79,11 +80,9 @@
 				.selectAll('text')
 				.style('text-anchor', 'middle')
 				.style('fill', 'white')
-				.attr('dy', '1em') // Move month labels below axis
+				.attr('dy', '1em')
 
 			g.append('g').call(yAxis).selectAll('text').style('fill', 'white')
-
-			// Style axis lines
 			g.selectAll('.domain, .tick line').style('stroke', 'white')
 		})
 	})
@@ -92,7 +91,7 @@
 <div class="mx-auto flex w-full max-w-[500px] flex-col">
 	<nav class="flex h-[60px] w-full items-center bg-[#845a0b] px-4">
 		<a href="." class="flex h-[50px] items-center">
-			<img src="logo.png" alt="star-lion" class="h-full" />
+			<img src="{base}/logo.png" alt="star-lion" class="h-full" />
 		</a>
 	</nav>
 	<div class="w-full" bind:this={chartArea}></div>
