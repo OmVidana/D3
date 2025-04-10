@@ -1,5 +1,7 @@
 <script lang="ts">
+	import { d3Pages } from '$lib'
 	import type { PageProps } from './$types'
+
 	let { data }: PageProps = $props()
 </script>
 
@@ -8,13 +10,13 @@
 		{data.title}
 	</h1>
 
-	<div class="w-full rounded-lg bg-white p-6 shadow-md">
-		{#if data.d3Element}
-			{#await data.d3Element then { default: D3 }}
+	{#if data.d3Element}
+		{#await data.d3Element then { default: D3 }}
+			<div class="w-full rounded-lg bg-white p-6 shadow-md">
 				<D3 />
-			{:catch error}
-				<p class="text-red-600">{error.message}</p>
-			{/await}
-		{/if}
-	</div>
+			</div>
+		{:catch error}
+			<p class="text-red-600">{error.message}</p>
+		{/await}
+	{/if}
 </div>
