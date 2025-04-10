@@ -5,13 +5,7 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
 const config = {
 	preprocess: vitePreprocess(),
 	kit: {
-		adapter: adapter({
-			pages: 'build',
-			assets: 'build',
-			fallback: null,
-			precompress: false,
-			strict: true
-		}),
+		adapter: adapter(),
 		paths: { base: process.env.NODE_ENV === 'production' ? '/D3' : '' }
 	}
 }

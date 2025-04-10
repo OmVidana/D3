@@ -11,7 +11,8 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
-		"lint": "prettier --check . && eslint ."
+		"lint": "prettier --check . && eslint .",
+		"deploy": "gh-pages -d build -t"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.8",
@@ -23,6 +24,7 @@
 		"@tailwindcss/typography": "^0.5.16",
 		"@tailwindcss/vite": "^4.1.3",
 		"@types/d3": "^7.4.3",
+		"@types/node": "^22.14.0",
 		"eslint": "^9.24.0",
 		"eslint-config-prettier": "^10.1.1",
 		"eslint-plugin-svelte": "^3.5.1",
