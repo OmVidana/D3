@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { base } from '$app/paths'
 	import * as d3 from 'd3'
 	let chartArea: HTMLDivElement
 
@@ -55,7 +54,7 @@
 			.value((d) => d.count)
 			.sort(null)
 
-		d3.tsv(`${base}/data/donut2.tsv`).then((data) => {
+		d3.tsv('data/donut2.tsv').then((data) => {
 			let formattedData = data.map((d) => ({
 				fruit: d.fruit.toLowerCase(),
 				region: d.region,

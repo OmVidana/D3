@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { base } from '$app/paths'
 	import * as d3 from 'd3'
 	let chartArea: HTMLDivElement
 
@@ -30,7 +29,7 @@
 			.append('g')
 			.attr('transform', `translate(${margin.left},${margin.top})`)
 
-		d3.json<DataPoint[]>(`${base}/data/example.json`).then((data) => {
+		d3.json<DataPoint[]>('data/example.json').then((data) => {
 			if (!data) return
 
 			let formattedData = data.map((d) => ({

@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { base } from '$app/paths'
 	import * as d3 from 'd3'
 	let chartArea: HTMLDivElement
 	let time = $state(0)
@@ -89,7 +88,7 @@
 			.attr('transform', `translate(${innerWidth + 48}, ${innerHeight - 96})`)
 			.style('fill', 'white')
 
-		d3.json<YearData[]>(`${base}/data/data.json`).then((data) => {
+		d3.json<YearData[]>('data/data.json').then((data) => {
 			if (!data) return
 
 			let formattedData = data.map((year) => ({

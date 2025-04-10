@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { base } from '$app/paths'
 	import * as d3 from 'd3'
 	let chartArea: HTMLDivElement
 
@@ -32,7 +31,7 @@
 
 		let parseTime = d3.timeParse('%d-%b-%y')
 
-		d3.tsv(`${base}/data/area.tsv`).then((data) => {
+		d3.tsv('data/area.tsv').then((data) => {
 			let formattedData: DataPoint[] = data.map((d) => ({
 				date: parseTime(d.date) as Date,
 				close: +d.close

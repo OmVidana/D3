@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { base } from '$app/paths'
 	import * as d3 from 'd3'
 	let chartArea: HTMLDivElement
 
@@ -11,7 +10,7 @@
 			.attr('height', 500)
 			.style('background', '#181A1B')
 
-		d3.json(`${base}/data/revenues.json`).then((data: any | null) => {
+		d3.json('data/revenues.json').then((data: any | null) => {
 			type JsonElement = { month: string; revenue: number; profit: number }
 			let JsonData = data as Array<JsonElement> | null
 			JsonData?.forEach((d) => {
@@ -38,7 +37,6 @@
 				.append('g')
 				.attr('transform', `translate(${margin.left},${margin.top})`)
 
-			// Add X axis label
 			g.append('text')
 				.attr(
 					'transform',
@@ -48,7 +46,6 @@
 				.style('fill', 'white')
 				.text('Month')
 
-			// Add Y axis label
 			g.append('text')
 				.attr('transform', 'rotate(-90)')
 				.attr('y', 0 - margin.left)
@@ -91,7 +88,7 @@
 <div class="mx-auto flex w-full max-w-[500px] flex-col">
 	<nav class="flex h-[60px] w-full items-center bg-[#845a0b] px-4">
 		<a href="." class="flex h-[50px] items-center">
-			<img src="{base}/logo.png" alt="star-lion" class="h-full" />
+			<img src="logo.png" alt="star-lion" class="h-full" />
 		</a>
 	</nav>
 	<div class="w-full" bind:this={chartArea}></div>

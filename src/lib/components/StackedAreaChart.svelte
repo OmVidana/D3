@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { base } from '$app/paths'
 	import * as d3 from 'd3'
 	let chartArea: HTMLDivElement
 
@@ -36,7 +35,7 @@
 		let parseDate = d3.timeParse('%Y')
 		let formatBillion = (x: number) => `${(x / 1e9).toFixed(1)}`
 
-		d3.csv(`${base}/data/stacked_area2.csv`).then((data) => {
+		d3.csv('data/stacked_area2.csv').then((data) => {
 			let keys = data.columns.filter((key) => key !== 'date')
 			let color = d3.scaleOrdinal(d3.schemeSpectral[11]).domain(keys)
 

@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { base } from '$app/paths'
 	import * as d3 from 'd3'
 	let chartArea: HTMLDivElement
 
@@ -15,7 +14,7 @@
 			.attr('height', height)
 			.style('background', '#f9f9f9')
 
-		d3.json(`${base}/data/buildings.json`).then((data: any | null) => {
+		d3.json('data/buildings.json').then((data: any | null) => {
 			type JsonElement = { name: string; height: number; country: string }
 			let JsonData = data as Array<JsonElement> | null
 			JsonData?.forEach((d) => {
