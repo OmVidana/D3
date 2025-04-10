@@ -1,5 +1,6 @@
 <script lang="ts">
 	export const prerender = true
+	import { base } from '$app/paths'
 	import type { Snippet } from 'svelte'
 	import '../app.css'
 	let props: { children: Snippet } = $props()
@@ -13,7 +14,10 @@
 	<nav class="bg-white shadow-lg">
 		<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 			<div class="flex h-16 items-center justify-between">
-				<a href="/" class="text-xl font-bold text-gray-800 hover:text-blue-600">
+				<a
+					href="{base}/"
+					class="text-xl font-bold text-gray-800 hover:text-blue-600"
+				>
 					D3 Labs
 				</a>
 				<a
