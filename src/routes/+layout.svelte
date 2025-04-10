@@ -1,5 +1,6 @@
 <script lang="ts">
 	export const prerender = true
+	export const ssr = false
 	import { base } from '$app/paths'
 	import type { Snippet } from 'svelte'
 	import '../app.css'
