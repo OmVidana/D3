@@ -1,6 +1,4 @@
 <script lang="ts">
-	export const prerender = true
-	export const trailingSlash = 'always'
 	import type { Snippet } from 'svelte'
 	import '../app.css'
 	let props: { children: Snippet } = $props()
