@@ -23,32 +23,37 @@ SvelteKit (for routing and project structure)
 
 ## 📦 Installation
 
-    ```bash
-    # create a new project in the current directory
-    npx sv create
-    # create a new project in my-app
-    npx sv create my-app
-    # Navigate to project directory (if you created my-app)
-    cd my-app
-    # Install dependencies
-    npm install
-    # Install D3.js and its types
-    npm install d3
-    npm install --save-dev @types/d3
-    ```
+```bash
+# create a new project in the current directory using static adapter
+npx sv create
+# create a new project in my-app
+npx sv create my-app
+# Navigate to project directory (if you created my-app)
+cd my-app
+# Install dependencies
+npm install
+# Install D3.js and its types
+npm install d3
+npm install --save-dev @types/d3
+```
+
+*This project uses Bun.js but process still the same**
 
 ## 🏃‍♂️ Running the project
 
-    ```bash
-    # Start development server
-    npm run dev
-    # or start with network access
-    npm run dev -- --host
-    # Build for production
-    npm run build
-    ```
+```bash
+# Start development server
+npm run dev
+# or start with network access
+npm run dev -- --host
+# Build for production
+npm run build
+```
+
+*This project uses Bun.js but process still the same**
 
 ## 📁 Project Structure
+
 ```
 src/
 ├── lib/
@@ -61,11 +66,13 @@ src/
 ## 💻 Component Structure
 
 Each visualization is contained in a single `.svelte` file that includes:
+
 - TypeScript for logic and D3 manipulation
 - HTML for structure
 - CSS for styling
 
 Example:
+
 ```svelte
 <script lang="ts">
   import * as d3 from 'd3';
